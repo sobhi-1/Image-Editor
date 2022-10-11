@@ -1,0 +1,40 @@
+to read photo from js => from new  class FileReader();
+Exp:-
+let file = new FileReader();
+  file.readAsDataURL(upload.files[0])
+------------------------------
+
+
+to download photo from js => download.href = img.src;
+
+by the function :-   
+ download.onclick = function () {
+   download.href = img.src;
+};
+
+-----------------
+to convert the img to canvas  to we can read and download by it.
+
+
+1- identfiy the :-
+const ctx = canvas.getContext("2d");
+
+2- and the first  : link canvas to html page
+
+3- convert every img.style by ctx 
+
+4- put the canvas into the img by the function:-
+ img.onload = function () {
+    canvas.Width = img.Width;
+    canvas.height = img.height;
+}
+5-  ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+6-  and put the:-
+img.style.dispaly ="none";
+
+7- and in the end put the download function:-
+
+download.onclick = function () {
+  download.href = canvas.toDataURL();
+};
+-----------
